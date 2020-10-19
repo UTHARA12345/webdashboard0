@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'admin/css/vendor/login.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1> Employees List</h1>
+<table>
+    <thead>
+        <th>Employee name</th>
+        <th>edit</th>
+        <th>details</th>
+        <th>delete</th>
+    </thead>
+    {% for data in object_list %}
+    <tbody>
+        <td>{{ data.employee_name }}</td>
+        <td><a href="{% url 'edit_emp' data.employee_id %}">edit</a></td>
+        <td><a href="{% url 'details_emp' data.employee_id %}">details</a></td>
+        <td><a href="{% url 'delete_emp' data.employee_id %}">delete</a></td>
+
+        {% empty %}
+        <td>No employees yet.</td>
+    </tbody>
+    {% endfor %}
+</table>
+<a href="{% url 'add_emp' %}">Add Employee</a><br>
+<a href="{% url 'logout' %}">Logout</a>
+
+</body>
+</html>
+

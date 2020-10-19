@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Employee details</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Email</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <th>{{details.employee_name}}</th>
+                <th>{{details.employee_email}}</th>
+                <th>{{details.employee_age}}</th>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>
